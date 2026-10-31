@@ -1,88 +1,75 @@
 <!DOCTYPE html>
-<html lang="en"></html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,inital-scale=1.0">
-    <title>Profile Page</title>
-    <link rel="stylesheet" href="index.css">
-    <body>
-        <div class="navbar-top"></div>
-            <div class="title">
-                <h1 id="profile_title">Profile</h1>
-            </div>
-            <!-- <ul>
-                <li>
-                    <a href="#message">
-                        <span class="icon-count">29</span>
-                        <i class="fa fa-envelope fa-2x"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#Notification">
-                        <span class="icon-count">5</span>
-                        <i class="fa fa-bell fa2x"></i> 
-                    </a>
-                </li>
-                <li>
-                    <a href="sign-out">
-                        <i class="fa fa-sign-out-alt fa-2x"></i>
-                    </a>
-                </li>
-            </ul> -->
-        </div>
-        <div class="sidenav">
-            <div class="Profile">
-                <img src="../images/profile hack.avif" alt="" width="100" height="100" ></img>
-                <div class="name"> Mr.Chef</div>
-            </div>
-            <div class="sidenav-url">
-                <div class="url">
-                    <a href="#Profile" class="active">Profile</a>
-                    <hr align="center">
-                </div>
-                <div class="url">
-                    <a href="#settings">Setting</a>
-                    <hr align="center">
-                </div>
-            </div>
-        </div>
-        <div class="main">
-            
-            <div class="card">
-                <div class="card-body">
-                    <i class="fa fa-pen fa-xs edit"></i>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>Name</td>
-                                <td>:</td>
-                                <td>Mr.chef</td>
-                            </tr>
-                            <tr>
-                                <td>Email</td>
-                                <td>:</td>
-                                <td>Mrchef@gmail.com</td>
-                            </tr>
-                            <tr>
-                                <td>Favourite Recipe</td>
-                                <td>:</td>
-                                <td>Biryani</td>
-                                <!-- <img src="profile hack.avif" alt="" width="100" height="100"></a> -->
-                                <tr>
-                                <td>Contact</td>
-                                <td>:</td>
-                                <td>9528465351</td>
-                                </tr>
-                            </tr>
-                            <tr>
-                                <td>Job Profile</td>
-                                <td>:</td>
-                                <td>Youtuber</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Kitchen — Savor</title>
+    <link rel="stylesheet" href="../assets/css/site.css">
 </head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="../home.html">
+            <span class="brand-mark">🌿</span>
+            Savor
+        </a>
+        <nav class="site-nav">
+            <a href="../home.html">Home</a>
+            <a href="../recipes.html">Recipes</a>
+            <a href="../profile/proflie.html" data-account-link>My kitchen</a>
+        </nav>
+    </header>
+
+    <main class="page-shell">
+        <div class="profile-layout">
+            <div class="profile-summary">
+                <div class="profile-avatar" data-profile-avatar>SC</div>
+                <h2 data-profile-name>Guest cook</h2>
+                <p data-profile-email>Add an email to your profile</p>
+                <div class="profile-stat" data-favorite-count>0 saved recipes</div>
+                <div class="profile-actions">
+                    <button class="button button-light" style="width:100%" data-sign-out>Sign out</button>
+                </div>
+            </div>
+
+            <div class="profile-panel">
+                <h2>Edit profile</h2>
+                <p>Update your display name and email address.</p>
+                <form data-profile-form>
+                    <div class="form-grid">
+                        <div class="form-field">
+                            <label for="name">Name</label>
+                            <input class="form-control" id="name" name="name" type="text" required autocomplete="name">
+                        </div>
+                        <div class="form-field">
+                            <label for="email">Email</label>
+                            <input class="form-control" id="email" name="email" type="email" autocomplete="email">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button class="button" type="submit">Save changes</button>
+                        <p class="form-message" data-form-message></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-heading">
+                <div>
+                    <h2>Saved recipes</h2>
+                    <p data-favorite-count>0 saved recipes</p>
+                </div>
+                <a class="text-link" href="../recipes.html">Browse all →</a>
+            </div>
+            <div class="recipe-grid" data-recipe-grid data-favorites="true"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 Savor · Made with ❤️ for healthy eating</p>
+    </footer>
+
+    <dialog class="dialog" id="recipe-dialog"></dialog>
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

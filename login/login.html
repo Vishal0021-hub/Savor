@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Log In</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <!-- <script>
-            document.getElementById("submit_btn").window.alert("Wrong Username or Password")
-        </script> -->
-        <div class="container">
-            <div class="blur"></div>
-            <div class="form_container">
-                <h1 id="title">Log In</h1>
-                <form action="/submit_login" method="post">
-                    <label for="username" class="label_text">Username:</label>
-                    <br>
-                    <input type="text" id="username" name="username" placeholder="Enter Username">
-                    <br>
-                    <label for="password" class="label_text">Password:</label>
-                    <br>
-                    <input type="password" id="password" name="password" placeholder="Enter Password" required>
-                    <br>
-                    <input type="button" id="submit_btn" value="Login">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In — Savor</title>
+    <link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+    <div class="auth-layout">
+        <div class="auth-intro">
+            <a class="brand" href="../home.html">
+                <span class="brand-mark">🌿</span>
+                Savor
+            </a>
+            <div class="auth-intro-copy">
+                <h1>Cook. Save. Share.</h1>
+                <p>Join thousands of home cooks discovering wholesome recipes every day.</p>
+            </div>
+            <small>Healthy eating made simple.</small>
+        </div>
+
+        <div class="auth-main">
+            <div class="auth-card">
+                <h2>Welcome back</h2>
+                <p>Sign in to access your saved recipes.</p>
+                <form data-login-form>
+                    <div class="form-field">
+                        <label for="identity">Username or email</label>
+                        <input class="form-control" id="identity" name="identity" type="text" placeholder="you@example.com" required autocomplete="username">
+                    </div>
+                    <div class="form-field">
+                        <label for="password">Password</label>
+                        <input class="form-control" id="password" name="password" type="password" placeholder="••••••••" required autocomplete="current-password">
+                    </div>
+                    <button class="button" type="submit">Sign in</button>
+                    <p class="form-message" data-form-message></p>
                 </form>
-                <a id="register" href="./registration.html" >Register</a>
+                <p class="auth-switch">Don't have an account? <a href="../register/registration.html">Register free</a></p>
+                <div class="demo-notice">🔑 This is a demo — any username and password will work.</div>
             </div>
         </div>
-    </body>
+    </div>
+
+    <script src="../assets/js/app.js"></script>
+</body>
 </html>

@@ -3,163 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Healthy Food Recipes</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-        nav {
-            background-color: #f2f2f2;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav a {
-            text-decoration: none;
-            color: #333;
-            padding: 10px 20px;
-            margin: 0 10px;
-        }
-        nav a:hover {
-            background-color: #ddd;
-            color: #000;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        h2 {
-            color: #4CAF50;
-        }
-        .recipe {
-            border-bottom: 1px solid #ddd;
-            padding: 20px 0;
-            margin-bottom: 20px;
-        }
-        .recipe h3 {
-            margin-top: 0;
-        }
-        .recipe p {
-            margin-top: 5px;
-        }
-        .image-upload {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .image-upload input[type="file"] {
-            display: none;
-        }
-        .image-upload label {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-    </style>
+    <title>Recipes — Savor</title>
+    <link rel="stylesheet" href="./assets/css/site.css">
 </head>
 <body>
-    <header>
-        <h1>Healthy Food Recipes</h1>
+    <header class="site-header">
+        <a class="brand" href="./home.html">
+            <span class="brand-mark">🌿</span>
+            Savor
+        </a>
+        <nav class="site-nav">
+            <a href="./home.html">Home</a>
+            <a href="./recipes.html">Recipes</a>
+            <a href="./login/login.html" class="nav-cta" data-account-link data-profile-href="./profile/proflie.html">Sign in</a>
+        </nav>
     </header>
-    <nav>
-        <a href="./home.html">Home</a>
-        <a href="./recipes.html">Recipes</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </nav>
-    <div class="container">
-        <h2>Featured Recipes</h2>
-        <div class="recipe">
-            <h3>Vegetable Roti Recipe</h3>
 
-            <b>Desciption:</b>
-            <p>This is a healthy roti that is perfect for anytime, 
-               which is made with whole wheat flour and mix of vegetables.
-               You can pair this delicious roti with plain curd.</p>
-                
-            <b>Ingredients:</b> 
-            <p>1 Cup atta; 1 cup mixed vegetables, boiled; 1 tsp roasted jeera powder;
-               1.5 tsp black pepper powder; 1 tsp lemon juice; 1 tbsp onion, chopped;
-               2 green chillies, finely chopped; 1 tsp coriander leaves; Black salt and salt, as per taste; 1/2 tsp oil</p>
-                
-            <b>Method:</b>
-            <p><pre>
-                1.Take the boiled mixed vegetables in a bowl.
-                2.Add all the ingredients (except atta and oil) and mash well.
-                3.Add atta to it and knead with luke warm water.
-                4.Cut small roundels and hand-press into rotis.
-                5.Brush some oil and toast well on medium to low flame.
-                6.Enjoy hot with dahi.</pre></p>
+    <main class="page-shell">
+        <div class="page-heading">
+            <div>
+                <h1>All Recipes</h1>
+                <p>Browse, search, and filter our growing collection.</p>
+            </div>
         </div>
-        <div class="recipe">
-            <h3>Atta Vegetable Khichdi</h3>
 
-            <b>Description:</b>
-            <p>You must have tried many Khichdi recipes till now, 
-               but today we are going to share with you an interesting recipe of Atta Vegetable Khichdi. 
-               This is a nutritious khichdi recipe prepared with a mixture of wheat flour and vegetables.</p>
-
-            <b>Ingredients:</b>
-            <p>Cup whole wheat flour (atta), Assorted vegetables (carrots, peas, beans, etc.),
-               2 tbsp ghee (clarified butter), 1 tsp cumin seeds, 1/2 tsp turmeric powder, 
-               1/2 tsp cumin powder, 1/2 tsp coriander powder, Salt to taste, Water</p>
-
-            <b>Method:</b>
-            <p><pre>
-                1.In a mixing bowl, add the whole wheat flour (atta). 
-                2.Gradually add water while kneading the flour until you achieve a smooth and consistent paste. Set this aside. 
-                3.Heat ghee in a deep, heavy-bottomed pan. Add cumin seeds and let them sizzle. 
-                4.Saute the vegetables until they turn slightly tender 
-                5.Add the spices. Stir well to coat the vegetables with these flavourful spices. 
-                6.Now, add the atta paste you prepared earlier to the sautéed vegetables. 
-                7.Mix everything thoroughly to ensure the paste blends well with the vegetables and spices. 
-                8.Pour enough water into the pan to cover the mixture. The water-to-atta ratio is usually 2:1. 
-                9.Season with salt to taste. Allow the mixture to come to a gentle boil. 
-                10.Reduce the heat to low, cover the pan, and let it simmer for about 15-20 minutes. Stir occasionally to prevent sticking. 
-                11.Once your Atta Vegetable Khichdi is cooked to perfection, drizzle it with a little ghee for added flavour and richness. 
-                12.Serve it hot.</pre></p>
-
-
+        <div class="toolbar">
+            <input class="form-control" type="search" placeholder="Search recipes…" data-recipe-search>
+            <select class="form-control" data-recipe-category>
+                <option value="All">All categories</option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Vegan">Vegan</option>
+                <option value="Breakfast">Breakfast</option>
+            </select>
         </div>
-        <div class="recipe">
-            <h3>Makhmali paneer tikka Recipe</h3>
-            
-            <b>Description:</b>
-            <p>Makhmali Paneer Tikka is a wonderful recipe. You can make this in two ways, 
-                if you want, you can stuffed a delicious filling between the paneer pieaces. 
-                In another method you can simply marinate paneer cubes and bake them in tandoor or oven. 
-                Serve with onions and green chutney.</p>
 
-            <b>Ingredients:</b>
-            <p>gms Paneer; 200 gram Hung Curd; 1 tbsp Fresh Cream; 2 tbsp Kaju Paste; 
-                1 tsp Black Pepper Powder; A pinch of Haldi; 1 tsp Green Chilli Paste; to taste Salt; 
-                2 tbsp Cheese, grated; 1 tbsp Roasted Besan; 1/4 cup Onion finely chopped; 1/4 cup Capsicum, 
-                finely chopped; 1/4 cup Red Bell Pepper, finely chopped; 2 tbsp Paneer, grated; 
-                2 tbsp Coriander Leaves, finely chopped; A pinch of Cardamom Powder; 1 tsp Kasuri Methi Powder; 
-                1/2 tsp Red Chilli Poweder; to taste Salt1 tbsp Cashew, finely chopped; 1 tsp Ghee; 1 tbsp Oil</p>
-                
-            <b>Method:</b>
-            <p><pre>
-                1.First of all we have to prepare the marinade. Add hung curd, cashew paste, chili paste, roast gram flour, cream, cheese and other ingredients in a bowl and mix well and keep it aside. 
-                2.Now, put a pan on the gas and heat it by adding oil, now fry finely chopped garlic, ginger and green chillies in it for a few seconds. After some time add onion, capsicum and yellow bell pepper and fry them. 
-                3.When it is fried, take it out in a bowl and cool it. Now add grated paneer, cheese, kasoori methi and all other ingredients and mix well. Keep the stuffing aside. 
-                4.Take paneer and cut it by making cuts from one side, so that it is attached to the side so that the stuffing does not come out. 
-                5.Cut all the paneer pieces equally and now open the paneer piece from the middle and fill the stuffing. 
-                6.Coat all these pieces well in the marinade. Now take a skewer, put capsicum and onion pieces in it, then Paneer. Place all the pieces in this order and bake in tandoor or oven for 10 to 15 minutes by applying a little ghee. 
-                7.Makhmali Paneer Tikka is ready to serve. Pair with green chutney and onions rings.</pre></p>
+        <p class="results-count" data-results-count></p>
+        <div class="recipe-grid" data-recipe-grid></div>
+
+        <div class="share-panel">
+            <h2>Share your recipe</h2>
+            <p>Have a recipe you love? Add it to the collection.</p>
+            <form data-recipe-form>
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="r-title">Recipe name</label>
+                        <input class="form-control" id="r-title" name="title" type="text" placeholder="e.g. Tomato &amp; Basil Pasta" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="r-category">Category</label>
+                        <select class="form-control" id="r-category" name="category" required>
+                            <option value="">Choose…</option>
+                            <option value="Vegetarian">Vegetarian</option>
+                            <option value="Vegan">Vegan</option>
+                            <option value="Breakfast">Breakfast</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="r-time">Time (minutes)</label>
+                        <input class="form-control" id="r-time" name="time" type="number" min="1" max="300" placeholder="30" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="r-difficulty">Difficulty</label>
+                        <select class="form-control" id="r-difficulty" name="difficulty" required>
+                            <option value="">Choose…</option>
+                            <option value="Easy">Easy</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Hard">Hard</option>
+                        </select>
+                    </div>
+                    <div class="form-field form-field-wide">
+                        <label for="r-description">Short description</label>
+                        <input class="form-control" id="r-description" name="description" type="text" placeholder="One sentence about the dish" required>
+                    </div>
+                    <div class="form-field form-field-wide">
+                        <label for="r-image">Image URL (optional)</label>
+                        <input class="form-control" id="r-image" name="image" type="url" placeholder="https://…">
+                    </div>
+                    <div class="form-field form-field-wide">
+                        <label for="r-ingredients">Ingredients (one per line)</label>
+                        <textarea class="form-control" id="r-ingredients" name="ingredients" rows="4" placeholder="250 g pasta&#10;2 garlic cloves" required></textarea>
+                    </div>
+                    <div class="form-field form-field-wide">
+                        <label for="r-steps">Method (one step per line)</label>
+                        <textarea class="form-control" id="r-steps" name="steps" rows="5" placeholder="Boil the pasta…&#10;Add the sauce…" required></textarea>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="button" type="submit">Add recipe</button>
+                    <p class="form-message" data-form-message></p>
+                </div>
+            </form>
         </div>
-        <div class="image-upload">
-            <input type="file" id="file-input" accept="image/*">
-            <label for="file-input">Upload Image</label>
-        </div>
-    </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 Savor · Made with ❤️ for healthy eating</p>
+    </footer>
+
+    <dialog class="dialog" id="recipe-dialog"></dialog>
+    <script src="./assets/js/app.js"></script>
 </body>
 </html>
