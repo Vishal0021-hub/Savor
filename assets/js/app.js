@@ -134,16 +134,19 @@ function setMessage(element, message, kind = "") {
 }
 
 function initializeNavigation() {
-    const currentPage = location.pathname.split("/").pop();
+    const currentPage = location.pathname.split("/").pop() || "home.html";
     document.querySelectorAll(".site-nav a").forEach((link) => {
-        if (link.getAttribute("href")?.endsWith(currentPage)) link.setAttribute("aria-current", "page");
+        const href = link.getAttribute("href")?.split("/").pop();
+        if (href && (href === currentPage || (currentPage === "" && href === "home.html"))) {
+            link.setAttribute("aria-current", "page");
+        }
     });
 
     const user = readStorage(STORAGE_KEYS.user, null);
     const accountLink = document.querySelector("[data-account-link]");
     if (accountLink && user) {
         accountLink.textContent = "My kitchen";
-        accountLink.href = accountLink.dataset.profileHref || "./profile/proflie.html";
+        accountLink.href = accountLink.dataset.profileHref || "./profile.html";
         accountLink.classList.remove("nav-cta");
     }
 }
@@ -271,7 +274,7 @@ function initializeRegistration() {
             return;
         }
         saveStorage(STORAGE_KEYS.user, { name: fields.get("name").trim(), email: fields.get("email").trim() });
-        location.href = "../profile/proflie.html";
+        location.href = "./home.html";
     });
 }
 
@@ -290,7 +293,7 @@ function initializeLogin() {
             email: identity.includes("@") ? identity : "",
         };
         saveStorage(STORAGE_KEYS.user, user);
-        location.href = "../profile/proflie.html";
+        location.href = "./home.html";
     });
 }
 
@@ -321,7 +324,7 @@ function initializeProfile() {
 
     document.querySelector("[data-sign-out]")?.addEventListener("click", () => {
         localStorage.removeItem(STORAGE_KEYS.user);
-        location.href = "../home.html";
+        location.href = "./index.html";
     });
 }
 
